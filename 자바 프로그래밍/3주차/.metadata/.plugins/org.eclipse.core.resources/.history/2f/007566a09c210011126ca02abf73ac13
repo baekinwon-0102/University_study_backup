@@ -1,0 +1,21 @@
+package ai.weak_3;
+
+import java.util.Scanner;
+
+public class Weak3_01 {
+
+	public static void main(String[] args) {
+		System.out.print("학번[0] 이름[1] 국어[2] 영어[3] 수학[4]을 순서대로 입력 >> ");
+		Scanner scan = new Scanner(System.in);
+		String grade = scan.next();
+		String name = scan.next();
+		int kor = scan.nextInt();
+		int eng = scan.nextInt();
+		int math = scan.nextInt();
+		int sum = kor+eng+math;
+		double avg = sum/3.0;
+		
+		System.out.printf("%s %s의 평균 점수는 %.1f입니다.", grade, name,avg);
+	}
+
+}

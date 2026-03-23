@@ -1,0 +1,30 @@
+package ai.weak_3;
+
+import java.util.Scanner;
+
+public class Test_03 {
+
+	public static void main(String[] args) {
+		// 수식을 입력받아 수식 결과 출력
+		// 입력형태 : 3 + 5
+		// 결과 : 8
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("수[1] 수식[2] 수[3]를 순서대로 입력하시오:");
+		int num1 = scan.nextInt();
+		char su = scan.next().charAt(0);
+		int num2 = scan.nextInt();
+		
+		if(su == '+')
+			System.out.printf("%d %c %d = %d",num1,su,num2,(num1+num2));
+		else if(su=='-')
+			System.out.printf("%d %c %d = %d",num1,su,num2,(num1-num2));
+		else if(su=='*')
+			System.out.printf("%d %c %d = %d",num1,su,num2,(num1*num2));
+		else
+			System.out.println("다시 입력");
+		
+	}
+
+}

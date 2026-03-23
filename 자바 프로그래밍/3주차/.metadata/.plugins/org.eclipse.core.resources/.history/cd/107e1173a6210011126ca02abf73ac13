@@ -1,0 +1,43 @@
+package ai.weak_3;
+
+import java.util.Scanner;
+
+public class Test_02 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("점수입력: ");
+		int grade = scan.nextInt();
+		
+		/*if(grade >=90)
+			System.out.println("A");
+		else if (grade >= 80)
+			System.out.println("B");
+		else if (grade >= 70)
+			System.out.println("C");
+		else if (grade >= 60)
+			System.out.println("D");
+		else
+			System.out.println("F");*/
+		
+		switch(grade/10) {
+		case 9,10:
+			System.out.println("A");
+		    break;
+		case 8:
+			System.out.println("A");
+		    break;
+		case 7:
+			System.out.println("A");
+		    break;
+		case 6:
+			System.out.println("A");
+		    break;
+		default:
+			System.out.println("F");
+			break;
+		}
+	}
+
+}

@@ -1,0 +1,14 @@
+package ai.day02;
+
+public class Practice_02 {
+
+	public static void main(String[] args) {
+		int a= 10, b=20;
+		double d=15;
+		char ch = 'A';
+		System.out.println(a+","+d+","+ch);
+		
+		System.out.println(a/b);
+	}
+
+}

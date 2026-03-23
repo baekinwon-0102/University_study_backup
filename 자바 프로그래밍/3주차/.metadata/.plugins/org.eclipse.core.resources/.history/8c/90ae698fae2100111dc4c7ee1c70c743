@@ -1,0 +1,12 @@
+package ai.weak_3for;
+
+public class Weak3do_01 {
+
+	public static void main(String[] args) {
+		int i = 1;
+		do {
+			System.out.print(i+" ");
+		}while(i<=10);
+	}
+
+}

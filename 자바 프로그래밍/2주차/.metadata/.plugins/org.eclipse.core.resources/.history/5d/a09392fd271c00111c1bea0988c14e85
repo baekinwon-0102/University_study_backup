@@ -1,0 +1,33 @@
+package ai.day02;
+
+public class Practice_02 {
+
+	public static void main(String[] args) {
+		int a= 10, b=3;
+		double d=15.3;
+		char ch = 'A';
+		double result = a/b;
+		
+		System.out.println(a+","+d+","+ch);
+		System.out.println(a/(double)b);
+		System.out.println(result);
+		System.out.println((int)d);
+		
+		String name = "백인원";
+		String dept = new String("인공지능");
+		System.out.println(name == "백인원");
+		System.out.println(dept.equals("인공지능"));
+		System.out.println("나의 이름은 "+name+"입니다.");
+		
+		Boolean bo = true;
+		final double PI=3.14;
+		
+		System.out.println(a==b);
+		System.out.println(a!=b);
+		System.out.println(a>=10 || b>=10);
+		System.out.println(a%b);
+		String result1 = (a%2==0)?"짝수":"홀수";
+		System.out.println(result1);
+	}
+
+}

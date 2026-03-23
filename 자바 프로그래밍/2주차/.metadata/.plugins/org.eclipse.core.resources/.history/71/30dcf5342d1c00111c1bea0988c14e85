@@ -1,0 +1,18 @@
+package ai.day02;
+import java.util.Scanner;
+
+public class Practice_03 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("당신의 이름, 나이, 키를 입력하시오: ");
+
+		String name = scan.next();
+		int age = scan.nextInt();
+		double height = scan.nextDouble();
+		
+		System.out.println(name+"의 키는 "+height+" 나이는 "+age+"세입니다.");
+	}
+
+}
