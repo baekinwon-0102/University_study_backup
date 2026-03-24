@@ -1,0 +1,7 @@
+for~each문
+for(자료형(클래스이름) 받아올정의할이름: 배열의이름)
+
+ex)
+for(int alist: a) {
+	System.out.print(alist+" ");
+}
