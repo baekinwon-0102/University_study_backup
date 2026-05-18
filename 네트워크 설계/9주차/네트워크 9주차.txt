@@ -1,0 +1,86 @@
+웹 개요
+- 인터넷을 이용해 할 수 있는 기능 중의 하나 (인터넷 >> 웹)
+- 멀리 떨어져 있는 컴퓨터간 문서를 주고 받기 위해 탄생(1990년)
+- 웹의 4가지 구성요소
+  - 웹 브라우저와 웹 서버 - 웹 페이지를 주고받는 소프트웨어
+  - HTML - 웹 페이지를 만드는 언어
+  - URL - 원하는 웹 페이지가 어디에 있는지 알려주는 주소체계
+  - HTTP - 웹 브라우저와 웹 서버가 통신할 때 사용하는 통신규칙
+
+URL
+- 웹 주소, 네트워크 상에서 리소스가 어디 있는지 알려주기 위한 주소체계
+- URL 형식: 프로토콜 // IP 주소 또는 도메인 주소: 포트번호 / 자원 위치
+- Protocol: 어떤 프로토콜을 사용하는지를 알려주는 역할(http 또는 https)
+- Host: 해당 웹사이트의 도메인 주소(네임 서버)
+- Port: URL엔 생략되어 있음(http는 80, https는 443을 기본 포트)
+- Path: 해당 웹사이트의 더 자세한 경로를 나타내는 역할
+- Query: URL에서 "?" 뒤에 조건에 맞는 파라미터가 따라오며 입력한 값에 따라
+  다른 결과를 보여줘야 할 때 쿼리 문자열을 사용
+
+HTTP
+- 서버와 클라이언트간 HTML 문서를 주고 받기 위한 통신 규칙
+- 웹 브라우저의 요청 메시지와 웹 서버의 응답 메시지의 구조를 규정
+- HTTPS(Hyper Transfer Protocol over Secure Socket Layer)는 보안이 강화된 HTTP
+
+HTTP 통신과 소켓 통신의 차이
+- 소켓 통신
+  - 서버와 클라이언트 양방향 통신
+  - 클라이언트와 서버 양쪽에서 서로에게 데이터 전달하는 방식
+  - 서버나 클라이언트에서 강제로 접속을 해제할 때 까지는 계속 연결을 유지하는 방식
+  - 클라이언트 수가 늘어날 수록 서버의 부하 증가 -> 접속할 수 있는 클라이언트 수 제한
+- HTTP 통신
+  - 클라이언트 요청이 있을 때 서버가 응답하는 방식의 단방향 통신
+  - 클라이언트에서 서버로 요청을 보내고 서버로 응답하는 방식
+  - JSON, Image, HTML 파일 등 다양한 파일을 전송 받을 수 있음
+  - 응답을 받은 후 연결이 끊어지는 것이 기본 동작(HTTP 1.0)
+  - 성능 상으로 필요하다면 Keep Alive ㅗㅂ션을 주어 일정 시간 동안 연결을 유지하는
+    것이 가능(HTTP 1.1 이상)
+
+HTTP 특징
+- 서버와 클라이언트 구조
+- 무상태 프로토콜
+  - 서버는 클라이언트 요청정보에 대해서만 응답하며, 이전 요청과는 무관
+- 비연결성 프로토콜
+  - HTTP는 기본적으로 연결을 유지하지 않는 모델
+  - 단, HTTP 1.1 부터 HTTP 지속 연결 가능
+
+HTTP Request Message의 구성
+- Request Line
+  - HTTP method, URL, HTTP version으로 구성
+  - HTTP method: 클라이언트가 웹 서버에게 요청하는 목적 알리는 수단(GET, POST)
+    - GET은 서버로 정보를 요청하는 목적
+    - POST는 서버로 정보를 전달하는 목적
+  - URL: 요청 자원 명시
+  - HTTP version: HTTP version을 명시(1.0, 1.1, 2.0 등)
+- Headers
+  - 해당 request에 대한 추가 정보를 담고 있는 부분
+  - HTTP 요청 메시지에서 사용한느 헤더 항목
+    - Request Line에서 표현되지 않은 더 구체적인 요구를 작성하는 공간
+  - Host: 서버의 도메인 주소
+  - Connection: Keep-alive가 디폴트(HTTP/2에선 사용 안 함)
+  - User-Agent: 사용자의 웹 브라우저 종류 & 버전 정보
+  - Accept: 브라우저가 처리할 수 있는 데이터 형태
+  - Accept-Language: 사용하는 언어
+  - Accept-Encoding: 브라우저가 처리할 수 있는 콘텐츠 압축 방식
+- blank line(공백)
+  - 헤더와 바디를 구분하기 위해 헤더와 바디 사이에 blank line이 있음
+  CRLF(\r\n): 공백라인
+- Body
+  - HTTP Request가 전송하는 데이터를 담고 있는 부분
+  - 전송하는 데이터가 없다면 body 부분은 비어있음 즉, GET 요청시에는 Body는 비어있고
+    POST 요청일 경우 Body에 정보 포함되어 있음
+
+HTTP Response Message의 구성
+- Status Line
+  - HTTP Response의 상태 나타내는 부분
+  - HTTP version, Status Code, Status Text로 구성
+- Headers
+  - Response의 headers와 거의 유사
+  - 네트워크상에서 데이터 보낼 때 데이터의 형식을 나타내는 표준방식이 MIME 타입 사용
+    - MIME: 미디어 타입(주타입/서브타입) 서버는 모든 HTTP 객체에 MIME 타입 붙임
+  - Content-type: 보내는 자원의 형식을 명시하기 위해 헤더에 실리는 정보(MIME 타입)
+    - text/html: text 중 html 파일임을 나타냄
+  - Content-Length: body의 길이(바이트 단위)
+- Blank Line
+- Body
+  - 보통은 클라이언트가 요청한 HTML 문서가 들어감

@@ -1,0 +1,106 @@
+Spark
+- In-Memory 연산을 통해 디스크 기반 Hadoop의 성능을 향상
+- RDD, DataFrame, Dataset 3가지 API 제공
+- Java, Scala, Python을 통해 script 작성
+
+In-memory 연산
+- Ram이 비싸기 때문에 사용
+- 속도보다 신뢰성이 우선임
+- 작업 중 지속적으로 HDFS에 access(읽기, 쓰기) 반복
+
+Driver program -> 현장 책임자( pyspark의 경우 파이썬 프로세스 자체)
+- Task 진행을 통제
+- SparkContext를 생성하는 메인 process
+
+Executor -> 현장 일꾼
+- 다수의 worker node에서 실행되는 프로세스
+- Caching을 통해 빠르고 효율적으로 데이터 가공
+- Executor는 cluster manager에 의해 spark 어플리케이션에 할당
+
+Cluster manager -> Yarn, mesos (인력 사무소)
+- Executor에 task를 할당하고 관리
+- Spark는 cluster manager와의 통신을 통해 할당 가능한 executor를 전달받음,DAG 
+작업 실행 설계로 작업 최적화 해 속도 높임
+
+SparkContext
+- Spark 기능의 기본 진입점, Cluster와 통신
+- Spark cluster와 연결하기 윈한 entry point -> cluster manager와 통신하며 자원을 
+  요청하는 통로
+- 필요한 이유
+  - Driver(Python) <-> cluster Manager(Java) 통역가 
+  - 보안 및 절차: spark context 생성시 app의 이름, 메모리, 보안 인증등의 정보를 담음 
+    이는 cluster manager에 제출할 규격에 맞춘 요청서임
+  - 네트워크 관리: Executor 위치, 상태, 상태, IP 등을 Driver가 관리하기엔
+    코드가 너무 복잡해짐 -> Spark context가 네트워크 주소록 관리, 연결유지 담당 
+
+Spark SQL
+- Spark의 SQL 인터페이스
+- SQL query또는 유사함수를 통해 Spark의 data 변환
+
+Spark Streaming
+- 실시간으로 streaming data를 처리 가능
+
+MLlib
+- Spark data에 적용하는 machine learning이나 data mining library
+
+GraphX
+- 대용량 data의 분산 및 병령 그래프 처리 지원
+
+RDD (Resilient Distributed Dataset)
+- Spark의 기본 데이터 구조
+- 작업을 클러스터에 고르게 분산하고, 실패가 발생해도 회복할 수 있는 dataset
+- RDD 객체는 key-value 정보를 포함한 일반적인 정보를 저장하는 수단,
+ 클러스터에서 자동으로 작업
+- SparkContext는 Spark내에서 driver program이 작동하는 환경, RDD를 만드는 주체
+- 대부분 작업이 Transformation + Action의 조합
+- Transforming RDD's
+  - 새로운 RDD를 생성하는 연산
+  - map, flatmap, filter 등
+- RDD actions
+  - 실제 값을 연산해, Driver로 결과를 돌려주거나 HDFS에 저장하는 연산
+  - collect, count, take, reduce 등
+- Lazy evaluation -> DAG (작업 설계도)
+  - RDD action 호출 전까지 transform 하지 않음
+  - Action을 호출할 때, spark는 결과물에 도달할 수 있는 최단 경로 찾음
+  - Transform 명령을 하면 spark는 실제 연산을 하지 않고, 어떤 순서로 처리할지
+   기록함 -> 이 기록들이 DAG임 -> action 실행시 설계도를 토대로 작업 실행
+   ex) transform : 레시피 작성 과정, action : 실제요리 과정
+
+DataFrames (Pandas 데이터프레임과 유사)
+- Row object 포함함 -> Structured, table 형태 Row의 집합이 DataFrame임
+- Schema 가지고 있음 -> column과 type을 가지고 있는데 이를 통해 
+  spark는 데이터 구조를 알 수 있음 = 즉 schema는 DF의 각 column 정보(Data type, 
+  nullable 등)
+- SQL query 실행 가능
+- JSON,Hive, parquet에 쓰거나 읽을 수 있음
+- JDBC/ODBC, Tableau와 통신 가능
+- Catalyst optimizer를 통해 실행 시점에 코드를 최적화 해 성능 향상
+- DataFrame과 RDD의 차이점:RDD -> 객체(object)의 모음으로 간주 -> 데이터 안에 
+  어떤 데이터가 있는지 Spark가 모름 (최근 거의 사용 안 함)
+
+Dataset
+- DataFrame의 편의성과 RDD의 타입 안정성을 합친 것
+- python에서는 사용 불가능
+- 데이터 처리 속도를 더욱 증가시킴
+- Spark 2.0에서 DataFrame과 Dataset 통합
+- Untyped API와 Strongly-typed API 2가지 특징을 가짐
+  - Untyped API: DataFrame, Row 객체 단위
+  - Strongly-typed API: Dataset, Class object(사용자 정의 객체)
+- 데이터에 문제가 있는 경우, Untyped API(DataFrame)는 runtime
+  시점에서 오류를 찾을 수 있으나, Strongly-typed API(Dataset)는 compile 시점에서
+  오류 찾을 수 있음
+- 높은 수준의 API로 사용 가능
+  - agg, select, sum, avg, map, filter, groupby 등
+
+Spark 설치 과정
+1. java 확인 (17버전으로 설치, 17이상인 경우 삭제 후 재설치)
+2. pip install pyspark == 3.5.5
+3. Hadoop 설정 
+  3-1. google에서 Hadoop winutils 검색
+  3-2. gitgub에서 Hadoop 3.3.x의 winutils.exe와 Hadoop.dll 다운로드
+  3-3. C:\hadoop\bin 생성 후, 위 두 파일 저장
+4. 환경변수 설정
+  4-1. JAVA_HOME: java 설치 위치
+  4-2. HADOOP_HOME: C\Hadoop
+  4-3. SPARK_LOCAL_HOSTNAME:localhost
+  4-3. %JAVA_HOME%\bin, %HADOOP_HOME%\bin 시스템 Path에 추가

@@ -1,0 +1,21 @@
+package ai.weak_3;
+
+import java.util.Scanner;
+
+public class Test_01 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("정수입력: ");
+		int num = scan.nextInt();
+		
+		if(num==0)
+			System.out.println("0입니다.");
+		else if (num %2==0)
+		    System.out.println("짝수");
+		else
+			System.out.println("홀수");
+	}
+
+}

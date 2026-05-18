@@ -1,0 +1,39 @@
+Python http.server 모듈
+- 파이썬으로 HTTP 서버 구현 위한 기본 모듈
+  http.server는 별도의 외부 라이브러리 없이 파이썬 만으로 간단한 웹 서버를 쉽게
+  구축할 수 있게 해주는 내장 모듈
+- 웹서버 만드는데 필요한 라이브러리를 http.server 모듈에서 정의
+- 핵심 클래스
+  - HTTPServer 클래스: 웹 서버 객체를 만들기 위한 클래스
+    객체 생성시 서버 주소정보와 핸들러 클래스 반드시 필요
+  - 핸들러 클래스: 어떤 요청이 들어올 때 어떻게 응답할지 정의
+    BaseHTTPRequetsHandler 또는 SimpleHTTPRequestHandler 클래스
+- 핵심 클래스를 사용해 직접 서버 동작을 사용자 정의할 수 있음
+
+핸들러 종류
+- BaseHTTPRequestHandler
+  - 기본적인 프레임만 제공, 사용자가 로직 직접 추가
+  - 어떤 명령 메소드도 구현되지 않은 기본 서버(메소드 오버라이딩 사용)
+  - 부모 클래스의 메소드를 상속받아 자식 클래스에서 재정의하는 방식
+- SimpleHTTPRequestHandler
+  - 정적 파일서버, GET은 구현되어 있음
+  - BaseHTTPServer의 서브 클래스
+  - GET,HEAD method 구현된 서버
+- CGIHTTPRequestHandler
+  - 스크립트 실행용, GET/POST 구현
+  - SimpleHTTPServer의 서브클래스
+  - POST method 구현
+
+HTTP 요청 메소드
+- GET
+  - 리소스를 얻어오기 위한 요청
+  - 바디 사용 없이 쿼리 스트링으로 요청 데이터 전달
+- POST
+  - 새로운 리소스 생성 위한 요청
+  - 바디를 사용해 요청 데이터 전달
+- PUT
+  - 리소스 수정 요청(원래 자원에서 새로운 정보 추가, 삭제 위한 요청)
+  - 바디 사용해 데이터 전달
+- DELETE
+  - 리소스 삭제 위한 요청
+  - 바디 사용 없이 쿼리 스트링으로 데이터 전달
