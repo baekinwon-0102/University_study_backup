@@ -1,0 +1,462 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Exam",
+            "request": "launch",
+            "mainClass": "ai.day02.Exam",
+            "projectName": "Java_Programing_Weak2"
+        },
+        {
+            "type": "java",
+            "name": "Practice_01",
+            "request": "launch",
+            "mainClass": "ai.day02.Practice_01",
+            "projectName": "Java_Programing_Weak2"
+        },
+        {
+            "type": "java",
+            "name": "Practice_02",
+            "request": "launch",
+            "mainClass": "ai.day02.Practice_02",
+            "projectName": "Java_Programing_Weak2"
+        },
+        {
+            "type": "java",
+            "name": "Practice_03",
+            "request": "launch",
+            "mainClass": "ai.day02.Practice_03",
+            "projectName": "Java_Programing_Weak2"
+        },
+        {
+            "type": "java",
+            "name": "CarTest",
+            "request": "launch",
+            "mainClass": "day11/day11.carpack.CarTest",
+            "projectName": "day11"
+        },
+        {
+            "type": "java",
+            "name": "HeroTest",
+            "request": "launch",
+            "mainClass": "day11/day11.exam.HeroTest",
+            "projectName": "day11"
+        },
+        {
+            "type": "java",
+            "name": "HeroMain",
+            "request": "launch",
+            "mainClass": "day11/day11.example.HeroMain",
+            "projectName": "day11"
+        },
+        {
+            "type": "java",
+            "name": "ManTest",
+            "request": "launch",
+            "mainClass": "day11/day11.human.ManTest",
+            "projectName": "day11"
+        },
+        {
+            "type": "java",
+            "name": "PointTest",
+            "request": "launch",
+            "mainClass": "day11/day11.study.PointTest",
+            "projectName": "day11"
+        },
+        {
+            "type": "java",
+            "name": "Ex01",
+            "request": "launch",
+            "mainClass": "weak10/weak10.exam01.Ex01",
+            "projectName": "weak10"
+        },
+        {
+            "type": "java",
+            "name": "Ex02",
+            "request": "launch",
+            "mainClass": "weak10/weak10.exam01.Ex02",
+            "projectName": "weak10"
+        },
+        {
+            "type": "java",
+            "name": "Ex03",
+            "request": "launch",
+            "mainClass": "weak10/weak10.exam01.Ex03",
+            "projectName": "weak10"
+        },
+        {
+            "type": "java",
+            "name": "Ex04",
+            "request": "launch",
+            "mainClass": "weak10/weak10.exam01.Ex04",
+            "projectName": "weak10"
+        },
+        {
+            "type": "java",
+            "name": "LoginException",
+            "request": "launch",
+            "mainClass": "weak10/weak10.exam01.LoginException",
+            "projectName": "weak10"
+        },
+        {
+            "type": "java",
+            "name": "MyExceptionTest",
+            "request": "launch",
+            "mainClass": "weak10/weak10.exam01.MyExceptionTest",
+            "projectName": "weak10"
+        },
+        {
+            "type": "java",
+            "name": "NumberException",
+            "request": "launch",
+            "mainClass": "weak10/weak10.exam01.NumberException",
+            "projectName": "weak10"
+        },
+        {
+            "type": "java",
+            "name": "PersonTest1",
+            "request": "launch",
+            "mainClass": "weak7/ai.arrlist.PersonTest1",
+            "projectName": "weak7"
+        },
+        {
+            "type": "java",
+            "name": "PersonTest2",
+            "request": "launch",
+            "mainClass": "weak7/ai.arrlist.PersonTest2",
+            "projectName": "weak7"
+        },
+        {
+            "type": "java",
+            "name": "StudentTest",
+            "request": "launch",
+            "mainClass": "weak7/ai.assignment.StudentTest",
+            "projectName": "weak7"
+        },
+        {
+            "type": "java",
+            "name": "Exam02",
+            "request": "launch",
+            "mainClass": "weak7/ai.cir.Exam02",
+            "projectName": "weak7"
+        },
+        {
+            "type": "java",
+            "name": "Exam03",
+            "request": "launch",
+            "mainClass": "weak7/ai.mov.Exam03",
+            "projectName": "weak7"
+        },
+        {
+            "type": "java",
+            "name": "Exam01",
+            "request": "launch",
+            "mainClass": "weak7/ai.weak7.Exam01",
+            "projectName": "weak7"
+        },
+        {
+            "type": "java",
+            "name": "AccountTest",
+            "request": "launch",
+            "mainClass": "weak9/day09.exam.AccountTest",
+            "projectName": "weak9"
+        },
+        {
+            "type": "java",
+            "name": "KbankTest",
+            "request": "launch",
+            "mainClass": "weak9/day09.exam.KbankTest",
+            "projectName": "weak9"
+        },
+        {
+            "type": "java",
+            "name": "PizzaTest",
+            "request": "launch",
+            "mainClass": "weak9/day09.exam.PizzaTest",
+            "projectName": "weak9"
+        },
+        {
+            "type": "java",
+            "name": "PlaneTest",
+            "request": "launch",
+            "mainClass": "weak9/day09.exam.PlaneTest",
+            "projectName": "weak9"
+        },
+        {
+            "type": "java",
+            "name": "AccountTest(1)",
+            "request": "launch",
+            "mainClass": "weak9/day09.test.AccountTest",
+            "projectName": "weak9"
+        },
+        {
+            "type": "java",
+            "name": "TelevisionTest",
+            "request": "launch",
+            "mainClass": "weak9/day09.tv.TelevisionTest",
+            "projectName": "weak9"
+        },
+        {
+            "type": "java",
+            "name": "CircleTest",
+            "request": "launch",
+            "mainClass": "weak_06/weak6.cla.CircleTest",
+            "projectName": "weak_06"
+        },
+        {
+            "type": "java",
+            "name": "MathTest",
+            "request": "launch",
+            "mainClass": "weak_06/weak6.cla.MathTest",
+            "projectName": "weak_06"
+        },
+        {
+            "type": "java",
+            "name": "Test01",
+            "request": "launch",
+            "mainClass": "weak_06/weak6.cla.Test01",
+            "projectName": "weak_06"
+        },
+        {
+            "type": "java",
+            "name": "Test02",
+            "request": "launch",
+            "mainClass": "weak_06/weak6.cla.Test02",
+            "projectName": "weak_06"
+        },
+        {
+            "type": "java",
+            "name": "Test_01",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3.Test_01",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Test_02",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3.Test_02",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Test_03",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3.Test_03",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Test_04",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3.Test_04",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Test_05",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3.Test_05",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Weak3_01",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3.Weak3_01",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Weak3_02",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3.Weak3_02",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Weak3_03",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3.Weak3_03",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Testfor_01",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3for.Testfor_01",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Weak3do_01",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3for.Weak3do_01",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Weak3for_01",
+            "request": "launch",
+            "mainClass": "weak_3/ai.weak_3for.Weak3for_01",
+            "projectName": "weak_3"
+        },
+        {
+            "type": "java",
+            "name": "Array_01",
+            "request": "launch",
+            "mainClass": "weak_4/ai.Array.Array_01",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Array_02",
+            "request": "launch",
+            "mainClass": "weak_4/ai.Array.Array_02",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Array_03",
+            "request": "launch",
+            "mainClass": "weak_4/ai.Array.Array_03",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Array_04",
+            "request": "launch",
+            "mainClass": "weak_4/ai.Array.Array_04",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Weak4_Exam",
+            "request": "launch",
+            "mainClass": "weak_4/ai.Array.Weak4_Exam",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "ContinueWhile",
+            "request": "launch",
+            "mainClass": "weak_4/ai.weak_4.ContinueWhile",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Continuefor",
+            "request": "launch",
+            "mainClass": "weak_4/ai.weak_4.Continuefor",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Exam_01",
+            "request": "launch",
+            "mainClass": "weak_4/ai.weak_4.Exam_01",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Exam_02",
+            "request": "launch",
+            "mainClass": "weak_4/ai.weak_4.Exam_02",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Exam_03",
+            "request": "launch",
+            "mainClass": "weak_4/ai.weak_4.Exam_03",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Gugudan_01",
+            "request": "launch",
+            "mainClass": "weak_4/ai.weak_4.Gugudan_01",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Gugudan_02",
+            "request": "launch",
+            "mainClass": "weak_4/ai.weak_4.Gugudan_02",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Gugudan_03",
+            "request": "launch",
+            "mainClass": "weak_4/ai.weak_4.Gugudan_03",
+            "projectName": "weak_4"
+        },
+        {
+            "type": "java",
+            "name": "Exam01(1)",
+            "request": "launch",
+            "mainClass": "weak_5/weak5.exam01.Exam01",
+            "projectName": "weak_5"
+        },
+        {
+            "type": "java",
+            "name": "Exam02(1)",
+            "request": "launch",
+            "mainClass": "weak_5/weak5.exam01.Exam02",
+            "projectName": "weak_5"
+        },
+        {
+            "type": "java",
+            "name": "Exam05",
+            "request": "launch",
+            "mainClass": "weak_5/weak5.exam01.Exam05",
+            "projectName": "weak_5"
+        },
+        {
+            "type": "java",
+            "name": "Exam_ArrayList03",
+            "request": "launch",
+            "mainClass": "weak_5/weak5.exam01.Exam_ArrayList03",
+            "projectName": "weak_5"
+        },
+        {
+            "type": "java",
+            "name": "Exam_ArrayList04",
+            "request": "launch",
+            "mainClass": "weak_5/weak5.exam01.Exam_ArrayList04",
+            "projectName": "weak_5"
+        },
+        {
+            "type": "java",
+            "name": "AnimalTest",
+            "request": "launch",
+            "mainClass": "week12/week12.day19.AnimalTest",
+            "projectName": "week12"
+        },
+        {
+            "type": "java",
+            "name": "MenuTest",
+            "request": "launch",
+            "mainClass": "week12/week12.ex2.MenuTest",
+            "projectName": "week12"
+        },
+        {
+            "type": "java",
+            "name": "ShapeTest",
+            "request": "launch",
+            "mainClass": "week12/week12.sh.ShapeTest",
+            "projectName": "week12"
+        }
+    ]
+}
