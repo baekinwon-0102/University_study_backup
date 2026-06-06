@@ -1,0 +1,10 @@
+DataFrame -> Table -> Row, Column
+DataFrame = Row 객체의 집합
+
+RDD -> Key, value -> Transformation(Mapper)과 Action(Reducer)으로 구성
+Mapper는 최종 데이터로 변형하는 과정
+Reducer는 집계
+
+# SparkContext 종료
+# SparkContext를 종료하지 않은채로 동일한 이름의 SparkContext 생성을 시도하면 오류가 발생할 수 있음
+spark.stop() 
