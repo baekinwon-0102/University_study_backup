@@ -22,11 +22,12 @@
 #define SIGNATURE_1_SIGMAP                    0x01
 #define SIGNATURE_2_SIGMAP                    0x02
 #define SIGNATURE_3_SIGMAP                    0x04
-#define SIGNATURE_1_GRIP_RIGHT_OFFSET_MM      25.0
-#define SIGNATURE_2_GRIP_RIGHT_OFFSET_MM      23.0
-#define SIGNATURE_3_GRIP_RIGHT_OFFSET_MM      25.0
+#define SIGNATURE_1_GRIP_RIGHT_OFFSET_MM      20.0
+#define SIGNATURE_2_GRIP_RIGHT_OFFSET_MM      18.0
+#define SIGNATURE_3_GRIP_RIGHT_OFFSET_MM      18.0
 #define SIGNATURE_2_3_GRIP_FORWARD_OFFSET_MM  20.0
-#define FINISH_BODY_CW_CORRECTION_VALUE       450
+#define SIGNATURE_2_AFTER_GRIP_BACKWARD_MM    15.0
+#define FINISH_BODY_CW_CORRECTION_VALUE       300
 #define FINISH_BODY_CW_CORRECTION_TIME        700
 #define SIGNATURE_MAX_COUNT                   7
 #define BLOCK_POSITION_COUNT                  6
@@ -209,6 +210,16 @@ void MoveRightBeforeGripIfNeeded(uint8_t targetBlockSigmap) {
       DriveDistanceAndMmPerSecAndDirection(dxl, SIGNATURE_2_3_GRIP_FORWARD_OFFSET_MM, DRIVE_DIRECTION_FORWARD);
       while(!CheckIfMobilebaseIsInPosition(dxl)) { PauseMissionIfRequested(); }
     }
+    ChangeMobilebaseToVelocityMode();
+  }
+}
+
+void MoveBackwardAfterGripIfNeeded(uint8_t targetBlockSigmap) {
+  if (targetBlockSigmap == SIGNATURE_2_SIGMAP) {
+    SetMobileGoalVelocityForSyncWrite(dxl, 0, 0, 0, 0);
+    ChangeMobilebaseToPositionMode();
+    DriveDistanceAndMmPerSecAndDirection(dxl, SIGNATURE_2_AFTER_GRIP_BACKWARD_MM, DRIVE_DIRECTION_BACKWARD);
+    while(!CheckIfMobilebaseIsInPosition(dxl)) { PauseMissionIfRequested(); }
     ChangeMobilebaseToVelocityMode();
   }
 }
@@ -432,6 +443,7 @@ void setup() {
 
       RunManipulatorPoseWithPoseDataInEEPROM(dxl, STORAGE, 1000, 0.0);
       DelayWithStopCheck(1500);
+      MoveBackwardAfterGripIfNeeded(targetBlockSigmaps[missionIdx]);
 
       while(1) {
         PauseMissionIfRequested();
