@@ -12,6 +12,7 @@ Python requests 모듈 사용하기
   - POST = requetsts.post()
   - PUT = requests.put()
   - DELETE = requests.delete()
+※ https://httpbin.org에서 동작방식 확인
 
 공공데이터와 OpenAPI
 - 공공데이터란 공공기간이 만들어내는 모든 자료나 정보
